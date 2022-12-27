@@ -1,5 +1,5 @@
 {
-  "name": "SAJ Inverter Modbus",
+  "name": "Midea Modbus",
   "content_in_root": false,
   "domains": [
     "sensor"
