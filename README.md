@@ -39,5 +39,5 @@ Both connectors are RJ45.
 * Cli Disable
 * Protocol Modbus
 
-[![saj_logo](https://github.com/wimb0/home-assistant-saj-modbus/blob/main/images/saj_modbus/logo.png)](https://www.saj-electric.com/)
+
 
