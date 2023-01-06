@@ -1,0 +1,632 @@
+modbus:
+  - type: tcp
+    name: "ew11"
+    host: 192.168.0.251
+    port: 8899
+    close_comm_on_error: false
+    timeout: 20
+    retry_on_empty: true
+    retries: 100
+    sensors:
+    - name: HPAW 000 Power on or off
+      slave: 1
+      address: 0
+    - name: HPAW 001 Setting the mode (auto/cool/heat)
+      slave: 1
+      address: 1
+    - name: HPAW 002 Setting water temperature T1S
+      unit_of_measurement: °C
+      slave: 1
+      address: 2
+      offset: -7680
+      device_class: temperature
+    - name: HPAW 003 Setting air temperature Ts
+      unit_of_measurement: °C
+      slave: 1
+      address: 3
+      scale: 0.2
+      precision: 1
+      device_class: temperature
+    - name: HPAW 004 T5s
+      slave: 1
+      address: 4
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 005 Function Setting
+      slave: 1
+      address: 5
+    - name: HPAW 006 Curve selection
+      slave: 1
+      address: 6
+    - name: HPAW 007 Forced water heating
+      slave: 1
+      address: 7      
+    - name: HPAW 008 Forced TBH
+      slave: 1
+      address: 8  
+    - name: HPAW 009 Forced IBH1
+      slave: 1
+      address: 9
+    - name: HPAW 010 t_SG_MAX
+      slave: 1
+      address: 10
+    - name: HPAW 011 T1S Z1
+      slave: 1
+      address: 11
+    - name: HPAW 012 T1S Z2
+      slave: 1
+      address: 12
+    - name: HPAW 013 t_antilock
+      slave: 1
+      address: 13
+      unit_of_measurement: °C
+    - name: HPAW 100 Operating frequency
+      slave: 1
+      address: 100
+      scale: 1
+      unit_of_measurement: Hz
+    - name: HPAW 101 Operating Mode
+      slave: 1
+      address: 101
+    - name: HPAW 102 Fan Speed
+      slave: 1
+      address: 102
+      offset: 0
+      scale: 1
+      unit_of_measurement: RPM
+      precision: 1
+    - name: HPAW 103 PMV openness
+      slave: 1
+      address: 103
+    - name: HPAW 104 Water inlet temperature
+      slave: 1
+      address: 104
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 105 Water outlet temperature
+      slave: 1
+      address: 105
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 106 T3 Temperature
+      slave: 1
+      address: 106
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 107 T4 Temperature
+      slave: 1
+      address: 107
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 108 Discharge temperature
+      slave: 1
+      address: 108
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 109 Return air temperature
+      slave: 1
+      address: 109
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 110 T1
+      slave: 1
+      address: 110
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 111 T1B
+      slave: 1
+      address: 111
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 112 T2
+      slave: 1
+      address: 112
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 113 T2B
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature    
+      slave: 1
+      address: 113
+    - name: HPAW 114 Ta
+      slave: 1
+      address: 114
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 115 T5
+      slave: 1
+      address: 115
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 116 Pressure 1
+      slave: 1
+      address: 116
+      unit_of_measurement: kPa
+      precision: 1
+      device_class: pressure      
+    - name: HPAW 117 Pressure 2
+      slave: 1
+      address: 117
+      unit_of_measurement: kPa
+      precision: 1
+      device_class: pressure      
+    - name: HPAW 118 Outdoor unit current
+      slave: 1
+      address: 118
+      unit_of_measurement: A
+      precision: 1
+      scale: 1
+      device_class: current
+    - name: HPAW 119 Outdoor unit voltage
+      slave: 1
+      address: 119
+      unit_of_measurement: V
+      precision: 1
+      device_class: voltage      
+    - name: HPAW 120 Tbt1
+      slave: 1
+      address: 120
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 121 Tbt2
+      slave: 1
+      address: 121
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 122 Compressor operation time
+      slave: 1
+      address: 122
+      unit_of_measurement: h
+      precision: 1
+    - name: HPAW 123 Unit capacity
+      slave: 1
+      address: 123
+      unit_of_measurement: kW
+      precision: 1
+      scale: 1
+      device_class: power
+    - name: HPAW 124 Current fault
+      slave: 1
+      address: 124
+    - name: HPAW 125 Fault 1
+      slave: 1
+      address: 125
+    - name: HPAW 126 Fault 2
+      slave: 1
+      address: 126
+    - name: HPAW 127 Fault 3
+      slave: 1
+      address: 127
+    - name: HPAW 128 Status bit 1
+      slave: 1
+      address: 128
+    - name: HPAW 129 Load output
+      slave: 1
+      address: 129
+    - name: HPAW 130 Software version
+      slave: 1
+      address: 130
+    - name: HPAW 131 Wired controller version No.
+      slave: 1
+      address: 131
+    - name: HPAW 132 Unit target frequency
+      slave: 1
+      address: 132
+      unit_of_measurement: Hz
+      precision: 1
+      device_class: frequency
+    - name: HPAW 133 DC bus current
+      unit_of_measurement: A
+      precision: 1
+      device_class: current
+      slave: 1
+      address: 133
+    - name: HPAW 134 DC bus voltage
+      slave: 1
+      address: 134
+      unit_of_measurement: V
+      precision: 1
+      scale: 10
+      device_class: voltage
+    - name: HPAW 135 TF module temperature
+      slave: 1
+      address: 135
+      unit_of_measurement: °C
+      precision: 1
+      scale: 1
+      device_class: temperature
+    - name: HPAW 136 Climate curve 1
+      slave: 1
+      address: 136
+    - name: HPAW 137 Climate curve 2
+      slave: 1
+      address: 137
+    - name: HPAW 138 Water flow
+      unit_of_measurement: m3/H
+      precision: 1
+      slave: 1
+      address: 138
+      scale: 0.01
+    - name: HPAW 139 Limit scheme of outdoor unit current
+      slave: 1
+      address: 139
+    - name: HPAW 140 Ability of Hydraulic module ?
+      slave: 1
+      address: 140
+      scale: 0.01
+      unit_of_measurement: kW
+      precision: 1
+      device_class: power
+    - name: HPAW 141 Tsolar
+      slave: 1
+      address: 141
+    - name: HPAW 142 Quantity of units in parallel
+      slave: 1
+      address: 142
+    - name: HPAW 143 Higher bits for electricity consumption
+      slave: 1
+      address: 143
+    - name: HPAW 144 Lower bits for electricity consumption
+      slave: 1
+      address: 144
+    - name: HPAW 145 Higher bits for power outout
+      slave: 1
+      address: 145
+    - name: HPAW 146 Lower bits for power output
+      slave: 1
+      address: 146
+    - name: HPAW 200 Home appliance type
+      slave: 1
+      address: 200
+    - name: HPAW 201 Temperature upper limit of T1S cooling
+      slave: 1
+      address: 201
+    - name: HPAW 202 Temperature lower limit of T1S cooling
+      slave: 1
+      address: 202
+    - name: HPAW 203 Temperature upper limit of T1S heating
+      slave: 1
+      address: 203
+    - name: HPAW 204 Temperature lower limit of T1S heating
+      slave: 1
+      address: 204
+    - name: HPAW 205 Temperature upper limit of TS setting
+      slave: 1
+      address: 205
+      scale: 0.2
+    - name: HPAW 206 Temperature lower limit of TS setting
+      slave: 1
+      address: 206
+      scale: 0.3
+    - name: HPAW 207 Temperature upper limit of water heating
+      slave: 1
+      address: 207
+    - name: HPAW 208 Temperature lower limit of water heating
+      slave: 1
+      address: 208
+    - name: HPAW 209 PUMP RUNNING TIME
+      slave: 1
+      address: 209
+      unit_of_measurement: min
+    - name: HPAW 210 Parameter setting 1
+      slave: 1
+      address: 210
+    - name: HPAW 211 Parameter setting 2
+      slave: 1
+      address: 211
+    - name: HPAW 212 dT5_On
+      slave: 1
+      address: 212
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 213 dT1S5
+      slave: 1
+      address: 213
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 214 T_Interval_DHW
+      slave: 1
+      address: 214
+      unit_of_measurement: min
+      precision: 1
+    - name: HPAW 215 T4DHWmax
+      slave: 1
+      address: 215
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 216 T4DHWmin
+      slave: 1
+      address: 216
+      unit_of_measurement: min
+      precision: 1
+    - name: HPAW 217 t_TBH_delay
+      slave: 1
+      address: 217
+      unit_of_measurement: min
+      precision: 1
+    - name: HPAW 218 dT5S_TBH_off
+      slave: 1
+      address: 218
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 219 T4_TBH_on
+      slave: 1
+      address: 219
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 220 T5s_DI
+      slave: 1
+      address: 220
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 221 t_DI_max
+      slave: 1
+      address: 221
+      unit_of_measurement: min
+    - name: HPAW 222 t_DI_hightemp
+      slave: 1
+      address: 222
+      unit_of_measurement: min
+    - name: HPAW 223 t_interval_C
+      slave: 1
+      address: 223
+      unit_of_measurement: min
+    - name: HPAW 224 dT1SC
+      slave: 1
+      address: 224
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 225 dTSC
+      slave: 1
+      address: 225
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 226 T4cmax
+      slave: 1
+      address: 226
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 227 T4cmin
+      slave: 1
+      address: 227
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 228 t_interval_H
+      slave: 1
+      address: 228
+      unit_of_measurement: min
+      precision: 1
+    - name: HPAW 229 dT1SH
+      slave: 1
+      address: 229
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 230 dTSH
+      slave: 1
+      address: 230
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 231 T4hmax
+      slave: 1
+      address: 231
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 232 T4hmin !
+      slave: 1
+      address: 232
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 233 T4_IBH_on
+      slave: 1
+      address: 233
+      unit_of_measurement: °C
+      precision: 1
+      scale: -1
+      device_class: temperature
+    - name: HPAW 234 dT1_IBH_on
+      slave: 1
+      address: 234
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature       
+    - name: HPAW 235 t_IBH_delay
+      slave: 1
+      address: 235
+      unit_of_measurement: min
+    - name: HPAW 237 T4_AHS_on !
+      slave: 1
+      address: 237
+      unit_of_measurement: °C
+      precision: 1
+      scale: 1
+      device_class: temperature      
+    - name: HPAW 238 dT1_AHS_on
+      slave: 1
+      address: 238
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 240 t_AHS_delay ???
+      slave: 1
+      address: 239
+      unit_of_measurement: min
+      precision: 1
+      scale: 0.3
+    - name: HPAW 240 t_DHWHP_max
+      slave: 1
+      address: 240
+      unit_of_measurement: min
+      precision: 1
+    - name: HPAW 242 t_DHWHP_restrict
+      slave: 1
+      address: 242
+      unit_of_measurement: min
+      precision: 1
+    - name: HPAW 243 T4autocmin
+      slave: 1
+      address: 243
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 244 T4autohmax
+      slave: 1
+      address: 244
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 245 T1S_H.A_H
+      slave: 1
+      address: 245
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 246 T5S_H.A_DHW
+      slave: 1
+      address: 246
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 247 PER_START ratio
+      slave: 1
+      address: 247
+    - name: HPAW 248 TIME_ADJUST
+      slave: 1
+      address: 248
+    - name: HPAW 249 dTbt2
+      slave: 1
+      address: 249
+    - name: HPAW 250 IBH1 power
+      slave: 1
+      address: 250
+      unit_of_measurement: W
+      device_class: power
+    - name: HPAW 251 IBH2 power
+      slave: 1
+      address: 251
+      unit_of_measurement: W
+      device_class: power
+    - name: HPAW 252 TBH power
+      slave: 1
+      address: 252
+      unit_of_measurement: W
+      device_class: power
+    - name: HPAW 253 Comfort parameter
+      slave: 1
+      address: 253
+    - name: HPAW 254 Comfort parameter
+      slave: 1
+      address: 254
+    - name: HPAW 255 t_DRYUP
+      slave: 1
+      address: 255
+    - name: HPAW 256 t_HIGHPEAK
+      slave: 1
+      address: 256
+    - name: HPAW 257 t_DRYD
+      slave: 1
+      address: 257
+    - name: HPAW 258 T_DRYPEAK
+      slave: 1
+      address: 258
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 259 t_firstFH Running time of floor heating for the first time
+      slave: 1
+      address: 259
+      unit_of_measurement: hrs
+    - name: HPAW 260 T1S (first floor heating)
+      slave: 1
+      address: 260
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 261 T1SetC1   Parameter cooling curves, def 10°C
+      slave: 1
+      address: 261
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature      
+    - name: HPAW 262 T1SetC2  Parameter cooling curves, def 16°C
+      slave: 1
+      address: 262
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 263 T4C1 Parameter cooling curves, def 35°C
+      slave: 1
+      address: 263
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 264 T4C2  Parameter cooling curves, def 25°C
+      slave: 1
+      address: 264
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 265 T1SetH1 Parameter cooling curves, def 35°C
+      slave: 1
+      address: 265
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 266 T1SetH2 Parameter cooling curves, def 28°C
+      slave: 1
+      address: 266
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 267 T4H1 Parameter cooling curves, def -5°C
+      slave: 1
+      address: 267
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 268 T4H2 Parameter cooling curves, def 7°C
+      slave: 1
+      address: 268
+      unit_of_measurement: °C
+      precision: 1
+      device_class: temperature
+    - name: HPAW 269 The type of power input limitation
+      slave: 1
+      address: 270
+    - name: HPAW 270 t_T4_FRESH_C/H
+      slave: 1
+      address: 271
+    - name: HPAW 271 T_PUMPI_DELAY
+      slave: 1
+      address: 272
+    - name: HPAW 272 EMISSION TYPE
+      slave: 1
+      address: 273
